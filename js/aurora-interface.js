@@ -1,4 +1,12 @@
 var Aurora = require('./../js/aurora.js').auroraModule;
+var Location = require('./../js/latlong.js').latLongModule;
+
+var displayLat = function(lat) {
+  $('.output-lat').text("Your latitude is " + lat);
+};
+var displayLong = function(long) {
+  $('.output-long').text("Your longitude is " + long);
+};
 
 var displayWeather = function(temp, cloud, rain) {
   $("#temp").text("Temperature: " + temp + " Celsius.");
@@ -21,11 +29,11 @@ var displayAurora = function(auroraLat, auroraLong, probability, color) {
   $("#color").text("Color: " + color + ".");
 };
 
-var displayLocation = function(1000Lat, 1000Long, 1000Probability, 1000Color, bestLat, bestLong, bestProbability, bestColor) {
-  $("#1000-lat").text("Latitude: " + 1000Lat + ".");
-  $("#1000-long").text("Longitude: " + 1000Long + ".");
-  $("#1000-probability").text("Probability: " + 1000Probability + " %.");
-  $("#1000-color").text("Color: " + 1000Color + ".");
+var displayLocation = function(closeLat, closeLong, closeProbability, closeColor, bestLat, bestLong, bestProbability, bestColor) {
+  $("#close-lat").text("Latitude: " + closeLat + ".");
+  $("#close-long").text("Longitude: " + closeLong + ".");
+  $("#close-probability").text("Probability: " + closeProbability + " %.");
+  $("#close-color").text("Color: " + closeColor + ".");
   $("#best-lat").text("Latitude: " + bestLat + ".");
   $("#best-long").text("Longitude: " + bestLong + ".");
   $("#best-probability").text("Probability: " + bestProbability + " %.");
@@ -36,7 +44,7 @@ $(document).ready(function() {
   $('#formId').submit(function(event) {
     event.preventDefault();
     var currentLocation = new Location($('#address').val(), $('#city').val(), $('#state').val());
-    
-    var aurora = new Aurora(
-    currentLocation.getLatLong(displayLat, displayLong);
-  })
+
+    currentLocation.getLatLong(displayLat, displayLong, displayWeather, displayStarStuff, displayAurora, displayLocation);
+  });
+});
