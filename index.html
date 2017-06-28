@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="build/css/vendor.css">
+    <link rel="stylesheet" href="build/css/styles.css">
+    <script src="build/js/vendor.min.js"></script>
+    <script type="text/javascript" src="build/js/app.js"></script>
+    <meta charset="utf-8">
+    <title>Aurora Finder</title>
+  </head>
+  <body>
+    <form id="formId">
+      <label for="address">Enter your address:</label>
+      <input id="address" type="text" name="address">
+      <label for="city">Enter your city:</label>
+      <input id="city" type="text" name="city">
+      <label for="state">Enter your state:</label>
+      <input id="state" type="text" name="state" max="2">
+      <button type="submit" name="button">Submit</button>
+    </form>
+    <div class="latlong">
+      <p><span class="output-lat"></span></p>
+      <p><span class="output-long"></span></p>
+    </div>
+    <div class="aurora">
+      <h3>Weather</h3>
+      <p><span id="temp"></span></p>
+      <p><span id="cloud-cover"></span></p>
+      <p><span id="rain"></span></p>
+      <br>
+      <h3>Celestial Status</h3>
+      <p><span id="sunrise"></span></p>
+      <p><span id="sunset"></span></p>
+      <p><span id="moonrise"></span></p>
+      <p><span id="moonset"></span></p>
+      <p><span id="moonphase"></span></p>
+      <br>
+      <h3>Aurora Information</h3>
+      <p><span id="aurora-lat"></span></p>
+      <p><span id="aurora-long"></span></p>
+      <p><span id="probability"></span></p>
+      <p><span id="color"></span></p>
+      <br>
+      <h3>Best Possible Location</h3>
+      <h5>Within 1000km</h5>
+      <p><span id="1000-lat"></span></p>
+      <p><span id="1000-long"></span></p>
+      <p><span id="1000-probability"></span></p>
+      <p><span id="1000-color"></span></p>
+      <h5>On Earth</h5>
+      <p><span id="best-lat"></span></p>
+      <p><span id="best-long"></span></p>
+      <p><span id="best-probability"></span></p>
+      <p><span id="best-color"></span></p>
+    </div>
+
+  </body>
+
+</html>
